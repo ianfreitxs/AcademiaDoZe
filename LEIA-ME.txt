@@ -1,0 +1,157 @@
+ACADEMIA DO ZE - ATIVIDADE DEV02DE20
+Aluno: Ian Freitas de Sousa
+
+O QUE FOI PREPARADO
+
+Esta pasta contem uma solucao Visual Studio chamada AcademiaDoZe e o projeto AcademiaDoZe.Domain em .NET 10.
+O projeto foi organizado nas tres pastas pedidas no material: Entities, Enums e ValueObjects.
+
+O exercicio da avaliacao 02 pede exatamente 4 enums, 7 Value Objects e 8 entidades. As classes desta etapa contem somente propriedades e construtores, conforme o PDF.
+
+ARQUIVOS
+
+Enums:
+- ColaboradorTipo.cs
+- ColaboradorVinculo.cs
+- MatriculaPlano.cs
+- MatriculaRestricoes.cs
+
+ValueObjects:
+- Arquivo.cs
+- Cep.cs
+- Cpf.cs
+- Email.cs
+- Endereco.cs
+- Senha.cs
+- Telefone.cs
+
+Entities:
+- Entity.cs
+- Logradouro.cs
+- Pessoa.cs
+- Aluno.cs
+- Colaborador.cs
+- Matricula.cs
+- AcessoAluno.cs
+- AcessoColaborador.cs
+
+REQUISITO DO NOME
+
+A primeira linha de cada arquivo .cs contem exatamente um comentario com o nome:
+// Ian Freitas de Sousa
+Nao foram colocados outros comentarios dentro dos arquivos .cs.
+
+COMO INSTALAR O AMBIENTE NO WINDOWS
+
+1. Acesse https://visualstudio.microsoft.com/pt-br/downloads/
+2. Baixe o Visual Studio Community 2026.
+3. Execute o instalador.
+4. No instalador, marque Desenvolvimento para desktop com .NET.
+5. Marque tambem Desenvolvimento para .NET Multi-platform App UI (MAUI), pois este e o ambiente indicado no material da disciplina.
+6. Instale.
+7. Reinicie o Windows se o instalador pedir.
+
+O .NET 10 e a versao usada pela atividade. O SDK do .NET 10 pode ser obtido em:
+https://dotnet.microsoft.com/pt-br/download/dotnet/10.0
+
+ABRINDO O PROJETO PRONTO
+
+1. Extraia a pasta AcademiaDoZe para um local simples, por exemplo:
+   C:\Users\SEU_USUARIO\Documents\AcademiaDoZe
+2. Entre na pasta AcademiaDoZe.
+3. Dê dois cliques em AcademiaDoZe.sln.
+4. O Visual Studio deve abrir a solucao.
+5. No Gerenciador de Solucoes, expanda AcademiaDoZe.Domain.
+6. Confira se aparecem as pastas Entities, Enums e ValueObjects.
+
+SE QUISER CRIAR TUDO MANUALMENTE NO VISUAL STUDIO
+
+1. Abra o Visual Studio 2026.
+2. Escolha Criar um novo projeto.
+3. Procure por Solucao em Branco.
+4. Escolha Solucao em Branco.
+5. Nome: AcademiaDoZe
+6. Escolha uma pasta para guardar o projeto.
+7. Clique em Criar.
+8. No Gerenciador de Solucoes, clique com o botao direito sobre a solucao AcademiaDoZe.
+9. Escolha Adicionar > Novo Projeto.
+10. Procure por Biblioteca de Classes.
+11. Escolha Biblioteca de Classes C#.
+12. Nome do projeto: AcademiaDoZe.Domain
+13. Framework: .NET 10.0.
+14. Clique em Criar.
+15. No projeto novo, apague o arquivo Class1.cs.
+16. Clique com o botao direito em AcademiaDoZe.Domain.
+17. Escolha Adicionar > Nova Pasta e crie Entities.
+18. Repita para criar Enums.
+19. Repita para criar ValueObjects.
+20. Crie os arquivos .cs com os mesmos nomes presentes nesta pasta.
+21. Substitua o conteudo de cada arquivo pelo arquivo correspondente fornecido nesta entrega.
+
+ORDEM MAIS FACIL PARA COLAR OS ARQUIVOS
+
+1. Enums
+2. ValueObjects
+3. Entity.cs
+4. Logradouro.cs
+5. Pessoa.cs
+6. Aluno.cs
+7. Colaborador.cs
+8. Matricula.cs
+9. AcessoAluno.cs
+10. AcessoColaborador.cs
+
+COMO ABRIR CADA ARQUIVO
+
+No Gerenciador de Solucoes, expanda a pasta correspondente e dê duplo clique no arquivo .cs.
+Cole o conteudo integral do arquivo correto.
+Pressione Ctrl+S para salvar.
+Nao acrescente comentarios aos arquivos .cs alem da primeira linha que ja contem o nome.
+
+COMO COMPILAR
+
+1. No menu superior do Visual Studio, selecione Build/Compilar.
+2. Escolha Build Solution/Compilar Solucao.
+3. Espere o Visual Studio terminar.
+4. Abra View/Exibir > Output/Saida.
+5. No painel de saida, selecione Build na caixa de origem, se necessario.
+6. O objetivo e aparecer uma mensagem de compilacao concluida sem erros.
+
+O QUE FAZER SE APARECER CLASS1.CS
+
+Se aparecer Class1.cs no projeto, clique com o botao direito nele e escolha Excluir.
+Ele nao faz parte da atividade.
+
+O QUE FAZER SE O TARGET FRAMEWORK NAO MOSTRAR NET 10.0
+
+1. Verifique se o Visual Studio 2026 esta atualizado.
+2. Verifique se o .NET 10 SDK esta instalado.
+3. Feche e abra o Visual Studio novamente.
+4. Se ainda nao aparecer, abra o Visual Studio Installer, clique em Modificar na instalacao e confirme os workloads do .NET.
+
+GITHUB
+
+O material tambem orienta a vincular o projeto a um repositorio Git. No Visual Studio:
+1. Abra a solucao.
+2. Menu Git.
+3. Escolha Criar Repositorio Git.
+4. Se quiser enviar para o GitHub, escolha GitHub na janela.
+5. Entre na sua conta do GitHub, escolha o nome do repositorio e crie/envie o repositorio.
+
+ENTREGA
+
+O PDF determina que os arquivos .cs sejam enviados individualmente e sem compactar, alem de um print da compilacao sem erro.
+
+Portanto, para a entrega final:
+1. Nao envie o arquivo .zip.
+2. Abra a pasta AcademiaDoZe.Domain.
+3. Entre em Entities, Enums e ValueObjects.
+4. Selecione os 19 arquivos .cs criados.
+5. Anexe os arquivos individualmente na atividade do professor.
+6. Anexe tambem o print da compilacao sem erros.
+
+IMPORTANTE SOBRE O QUE FOI MODELADO
+
+O PDF informa explicitamente que, nesta etapa, o foco e somente criar as classes, propriedades e construtores. Por isso nao foram adicionados services, banco de dados, telas MAUI, metodos de regra de negocio ou repositories concretos.
+
+Alguns tipos precisaram ser inferidos dos requisitos porque o PDF nao fornece uma ficha completa de cada classe. A relacao comum entre Pessoa e Colaborador, por exemplo, foi seguida a partir do construtor de Colaborador mostrado no proprio material.
