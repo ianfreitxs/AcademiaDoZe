@@ -1,16 +1,27 @@
 // Ian Freitas de Sousa
+using AcademiaDoZe.Domain.Common;
+
 namespace AcademiaDoZe.Domain.ValueObjects;
 
 public record Arquivo
 {
-    public string Nome { get; }
-    public string Extensao { get; }
     public byte[] Conteudo { get; }
 
-    public Arquivo(string nome, string extensao, byte[] conteudo)
+    private Arquivo(byte[] conteudo)
     {
-        Nome = nome;
-        Extensao = extensao;
         Conteudo = conteudo;
+    }
+
+    public static Result<Arquivo> Criar(byte[] conteudo)
+    {
+        if (conteudo is null)
+            return Result<Arquivo>.Failure("Arquivo", "ARQUIVO_OBRIGATORIO");
+
+        const int tamanhoMaximoBytes = 15 * 1024 * 1024;
+
+        if (conteudo.Length > tamanhoMaximoBytes)
+            return Result<Arquivo>.Failure("Arquivo", "ARQUIVO_TIPO_TAMANHO");
+
+        return Result<Arquivo>.Success(new Arquivo(conteudo));
     }
 }
