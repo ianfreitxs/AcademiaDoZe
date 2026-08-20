@@ -6,7 +6,7 @@ using AcademiaDoZe.Domain.ValueObjects;
 
 namespace AcademiaDoZe.Domain.Entities;
 
-public sealed class Colaborador : Pessoa
+public sealed class Colaborador : Pessoa, IAggregateRoot
 {
     public DateOnly DataAdmissao { get; private set; }
     public ColaboradorTipo Tipo { get; private set; }
@@ -28,10 +28,10 @@ public sealed class Colaborador : Pessoa
     {
         var notifications = new List<Notification>();
 
-        if (NormalizadoService.TextoVazioOuNulo(nome))
+        if (NormalizacaoService.TextoVazioOuNulo(nome))
             notifications.Add(new Notification("Nome", "NOME_OBRIGATORIO"));
         else
-            nome = NormalizadoService.LimparEspacos(nome);
+            nome = NormalizacaoService.LimparEspacos(nome);
 
         if (dataNascimento == default)
             notifications.Add(new Notification("DataNascimento", "DATA_NASCIMENTO_OBRIGATORIO"));

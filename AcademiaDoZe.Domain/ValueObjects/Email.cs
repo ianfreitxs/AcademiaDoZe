@@ -13,9 +13,9 @@ public record Email
         Valor = valor;
     }
 
-    public static Result<Email> Criar(string valor)
+    public static Result<Email> Criar(string? valor)
     {
-        var textoLimpo = NormalizadoService.LimparEspacos(valor);
+        var textoLimpo = NormalizacaoService.LimparEspacos(valor);
 
         if (string.IsNullOrWhiteSpace(textoLimpo) || !ValidarFormato(textoLimpo))
             return Result<Email>.Failure("Email", "EMAIL_FORMATO");
@@ -30,15 +30,16 @@ public record Email
         if (partes.Length != 2)
             return false;
 
-        if (string.IsNullOrWhiteSpace(partes[0]))
-            return false;
-
+        var usuario = partes[0];
         var dominio = partes[1];
 
-        if (string.IsNullOrWhiteSpace(dominio))
+        if (string.IsNullOrWhiteSpace(usuario) || string.IsNullOrWhiteSpace(dominio))
             return false;
 
-        if (dominio.StartsWith('.') || dominio.EndsWith('.'))
+        if (usuario.StartsWith('.') || usuario.EndsWith('.') || usuario.Contains(".."))
+            return false;
+
+        if (dominio.StartsWith('.') || dominio.EndsWith('.') || dominio.Contains(".."))
             return false;
 
         var labels = dominio.Split('.');
