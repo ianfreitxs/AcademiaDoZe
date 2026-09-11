@@ -15,13 +15,10 @@ public record Senha
 
     public static Result<Senha> Criar(string valor)
     {
-        if (NormalizacaoService.TextoVazioOuNulo(valor))
-            return Result<Senha>.Failure("Senha", "SENHA_OBRIGATORIO");
-
         var textoLimpo = NormalizacaoService.LimparEspacos(valor);
 
-        if (textoLimpo.Length < 6 || !textoLimpo.Any(char.IsUpper))
-            return Result<Senha>.Failure("Senha", "SENHA_FORMATO");
+        if (NormalizacaoService.TextoVazioOuNulo(textoLimpo))
+            return Result<Senha>.Failure("Senha", "SENHA_OBRIGATORIA");
 
         return Result<Senha>.Success(new Senha(textoLimpo));
     }

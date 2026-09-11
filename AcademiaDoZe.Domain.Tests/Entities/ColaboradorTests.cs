@@ -35,24 +35,9 @@ public class ColaboradorTests
     [InlineData(2)]
     public void Deve_Falhar_DataAdmissaoFutura(int daysOffset)
     {
-        var result = Colaborador.Criar(
-            1,
-            "Fulano",
-            "529.982.247-25",
-            DateOnly.FromDateTime(DateTime.Today.AddYears(-30)),
-            "(11) 91234-5678",
-            "user@example.com",
-            GetValidLogradouro(),
-            "123",
-            "",
-            "Abcdef",
-            GetValidArquivo(),
-            DateOnly.FromDateTime(DateTime.Today.AddDays(daysOffset)),
-            ColaboradorTipo.Atendente,
-            ColaboradorVinculo.CLT);
-
+        var result = Colaborador.Criar(1, "Fulano", "529.982.247-25", DateOnly.FromDateTime(DateTime.Today.AddYears(-30)), "(11) 91234-5678", "user@example.com", GetValidLogradouro(), "123", "", "Abcdef", GetValidArquivo(), DateOnly.FromDateTime(DateTime.Today.AddDays(daysOffset)), ColaboradorTipo.Atendente, ColaboradorVinculo.CLT);
         Assert.True(result.IsFailure);
-        Assert.Contains(result.Notifications, n => n.Propriedade == "DataAdmissao");
+        Assert.Contains(result.Notifications, n => n.Mensagem == "DATA_ADMISSAO_MAIOR_QUE_ATUAL");
     }
 
     [Theory]

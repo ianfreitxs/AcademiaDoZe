@@ -1,6 +1,5 @@
 // Ian Freitas de Sousa
 using AcademiaDoZe.Domain.Services;
-using Xunit;
 
 namespace AcademiaDoZe.Domain.Tests.Services;
 

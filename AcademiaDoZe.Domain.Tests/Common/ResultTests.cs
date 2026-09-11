@@ -18,7 +18,7 @@ public class ResultTests
     [Fact]
     public void Deve_Criar_Result_Failure_ComLista()
     {
-        var result = Result<string>.Failure([new Notification("Campo", "Erro")]);
+        var result = Result<int>.Failure([new Notification("Campo", "Erro")]);
         Assert.False(result.IsSuccess);
         Assert.True(result.IsFailure);
         Assert.Null(result.Value);
