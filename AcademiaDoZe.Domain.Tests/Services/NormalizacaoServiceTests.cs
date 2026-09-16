@@ -10,21 +10,22 @@ public class NormalizacaoServiceTests
     [InlineData("", true)]
     [InlineData(" ", true)]
     [InlineData("texto", false)]
+    [InlineData(" texto ", false)]
     public void Deve_TextoVazioOuNulo_RetornarEsperado(string? input, bool expected)
     {
-        var result = NormalizacaoService.TextoVazioOuNulo(input);
-        Assert.Equal(expected, result);
+        Assert.Equal(expected, NormalizacaoService.TextoVazioOuNulo(input));
     }
 
     [Theory]
     [InlineData(null, "")]
     [InlineData("", "")]
     [InlineData(" a b c ", "a b c")]
-    [InlineData("  a  b  c  ", "a b c")]
-    public void Deve_Normalizar_Espacos_Quando_LimparEspacosChamado(string? input, string expected)
+    [InlineData("a\tb\nc", "a b c")]
+    [InlineData("  um   dois  ", "um dois")]
+    [InlineData("x  y", "x y")]
+    public void Deve_Normalizar_Espacos(string? input, string expected)
     {
-        var result = NormalizacaoService.LimparEspacos(input);
-        Assert.Equal(expected, result);
+        Assert.Equal(expected, NormalizacaoService.LimparEspacos(input));
     }
 
     [Theory]
@@ -32,10 +33,11 @@ public class NormalizacaoServiceTests
     [InlineData("", "")]
     [InlineData("a b c", "abc")]
     [InlineData(" a b ", "ab")]
-    public void Deve_Remover_Todos_Espacos_Quando_LimparTodosEspacosChamado(string? input, string expected)
+    [InlineData("a\tb", "ab")]
+    [InlineData("1 2 3", "123")]
+    public void Deve_Remover_Todos_Espacos(string? input, string expected)
     {
-        var result = NormalizacaoService.LimparTodosEspacos(input);
-        Assert.Equal(expected, result);
+        Assert.Equal(expected, NormalizacaoService.LimparTodosEspacos(input));
     }
 
     [Theory]
@@ -43,10 +45,11 @@ public class NormalizacaoServiceTests
     [InlineData("", "")]
     [InlineData("abc", "ABC")]
     [InlineData("áéíõç", "ÁÉÍÕÇ")]
-    public void Deve_Converter_Para_Maiusculo_Quando_ParaMaiusculoChamado(string? input, string expected)
+    [InlineData("Sp", "SP")]
+    [InlineData("brasil", "BRASIL")]
+    public void Deve_Converter_ParaMaiusculo(string? input, string expected)
     {
-        var result = NormalizacaoService.ParaMaiusculo(input);
-        Assert.Equal(expected, result);
+        Assert.Equal(expected, NormalizacaoService.ParaMaiusculo(input));
     }
 
     [Theory]
@@ -55,9 +58,9 @@ public class NormalizacaoServiceTests
     [InlineData("a1b2c3", "123")]
     [InlineData("(11) 91234-5678", "11912345678")]
     [InlineData("no-digits", "")]
-    public void Deve_Manter_Apenas_Digitos_Quando_LimparEDigitosChamado(string? input, string expected)
+    [InlineData("12.345-67", "1234567")]
+    public void Deve_Manter_Apenas_Digitos(string? input, string expected)
     {
-        var result = NormalizacaoService.LimparEDigitos(input);
-        Assert.Equal(expected, result);
+        Assert.Equal(expected, NormalizacaoService.LimparEDigitos(input));
     }
 }

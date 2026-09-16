@@ -193,7 +193,7 @@ public sealed class LogradouroRepository : BaseRepository, ILogradouroRepository
         }
     }
 
-    private static Logradouro Map(DbDataReader reader)
+    public static Logradouro Map(DbDataReader reader, string nomeColumn = "nome")
     {
         try
         {
@@ -201,7 +201,7 @@ public sealed class LogradouroRepository : BaseRepository, ILogradouroRepository
             var result = Logradouro.Criar(
                 id,
                 reader.GetStringValue("cep"),
-                reader.GetStringValue("nome"),
+                reader.GetStringValue(nomeColumn),
                 reader.GetStringValue("bairro"),
                 reader.GetStringValue("cidade"),
                 reader.GetStringValue("estado"),

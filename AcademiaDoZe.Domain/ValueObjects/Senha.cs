@@ -20,6 +20,9 @@ public record Senha
         if (NormalizacaoService.TextoVazioOuNulo(textoLimpo))
             return Result<Senha>.Failure("Senha", "SENHA_OBRIGATORIA");
 
+        if (textoLimpo.Length < 6 || !textoLimpo.Any(char.IsUpper))
+            return Result<Senha>.Failure("Senha", "SENHA_FORMATO");
+
         return Result<Senha>.Success(new Senha(textoLimpo));
     }
 
