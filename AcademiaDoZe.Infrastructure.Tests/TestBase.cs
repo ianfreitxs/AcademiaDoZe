@@ -7,7 +7,7 @@ namespace AcademiaDoZe.Infrastructure.Tests;
 
 public abstract class TestBase
 {
-    private const DatabaseType SelectedDatabaseType = DatabaseType.MySql;
+    private const DatabaseType SelectedDatabaseType = DatabaseType.Sqlite;
 
     public DatabaseType DatabaseType { get; }
     public string ConnectionString { get; }
