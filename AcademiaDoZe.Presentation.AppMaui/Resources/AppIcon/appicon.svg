@@ -1,4 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="456" height="456" viewBox="0 0 456 456" version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <rect x="0" y="0" width="456" height="456" fill="#512BD4" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+	<rect width="512" height="512" rx="96" fill="#512BD4"/>
+	<circle cx="256" cy="256" r="150" fill="#FFFFFF"/>
+	<rect x="166" y="233" width="180" height="46" rx="23" fill="#512BD4"/>
+	<rect x="116" y="202" width="42" height="108" rx="18" fill="#512BD4"/>
+	<rect x="354" y="202" width="42" height="108" rx="18" fill="#512BD4"/>
+	<rect x="82" y="218" width="28" height="76" rx="12" fill="#512BD4"/>
+	<rect x="402" y="218" width="28" height="76" rx="12" fill="#512BD4"/>
 </svg>

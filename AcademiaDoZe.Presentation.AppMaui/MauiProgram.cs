@@ -24,6 +24,10 @@ public static class MauiProgram
                 fonts.AddFont(
                     "OpenSans-Semibold.ttf",
                     "OpenSansSemibold");
+
+                fonts.AddFont(
+                    "MaterialIcons-Regular.ttf",
+                    "MaterialIcons");
             });
 
         ConfigurationHelper.ConfigureServices(
@@ -46,6 +50,9 @@ public static class MauiProgram
 
         builder.Services.AddTransient<
             LogradouroPage>();
+
+        builder.Services.AddTransient<
+            ConfigPage>();
 
 #if DEBUG
         builder.Logging.AddDebug();

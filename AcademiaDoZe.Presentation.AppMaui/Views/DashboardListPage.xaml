@@ -50,12 +50,19 @@
 
                     <StackLayout Spacing="10">
                         <Label
-                            Text="{Binding TotalLogradouros}"
-                            Style="{StaticResource SubHeadline}"/>
+        FontFamily="MaterialIcons"
+        Text="&#xe7f1;"
+        Style="{StaticResource SubHeadline}"
+        HorizontalTextAlignment="Center"/>
 
                         <Label
-                            Text="Logradouros"
-                            HorizontalTextAlignment="Center"/>
+        Text="{Binding TotalLogradouros}"
+        Style="{StaticResource SubHeadline}"
+        HorizontalTextAlignment="Center"/>
+
+                        <Label
+        Text="Logradouros"
+        HorizontalTextAlignment="Center"/>
                     </StackLayout>
                 </Border>
 
@@ -67,12 +74,19 @@
 
                     <StackLayout Spacing="10">
                         <Label
-                            Text="{Binding TotalAlunos}"
-                            Style="{StaticResource SubHeadline}"/>
+        FontFamily="MaterialIcons"
+        Text="&#xe80c;"
+        Style="{StaticResource SubHeadline}"
+        HorizontalTextAlignment="Center"/>
 
                         <Label
-                            Text="Alunos"
-                            HorizontalTextAlignment="Center"/>
+        Text="{Binding TotalAlunos}"
+        Style="{StaticResource SubHeadline}"
+        HorizontalTextAlignment="Center"/>
+
+                        <Label
+        Text="Alunos"
+        HorizontalTextAlignment="Center"/>
                     </StackLayout>
                 </Border>
 
@@ -84,12 +98,19 @@
 
                     <StackLayout Spacing="10">
                         <Label
-                            Text="{Binding TotalColaboradores}"
-                            Style="{StaticResource SubHeadline}"/>
+        FontFamily="MaterialIcons"
+        Text="&#xea67;"
+        Style="{StaticResource SubHeadline}"
+        HorizontalTextAlignment="Center"/>
 
                         <Label
-                            Text="Colaboradores"
-                            HorizontalTextAlignment="Center"/>
+        Text="{Binding TotalColaboradores}"
+        Style="{StaticResource SubHeadline}"
+        HorizontalTextAlignment="Center"/>
+
+                        <Label
+        Text="Colaboradores"
+        HorizontalTextAlignment="Center"/>
                     </StackLayout>
                 </Border>
 
@@ -101,12 +122,19 @@
 
                     <StackLayout Spacing="10">
                         <Label
-                            Text="{Binding TotalMatriculas}"
-                            Style="{StaticResource SubHeadline}"/>
+        FontFamily="MaterialIcons"
+        Text="&#xefec;"
+        Style="{StaticResource SubHeadline}"
+        HorizontalTextAlignment="Center"/>
 
                         <Label
-                            Text="Matrículas"
-                            HorizontalTextAlignment="Center"/>
+        Text="{Binding TotalMatriculas}"
+        Style="{StaticResource SubHeadline}"
+        HorizontalTextAlignment="Center"/>
+
+                        <Label
+        Text="Matrículas"
+        HorizontalTextAlignment="Center"/>
                     </StackLayout>
                 </Border>
             </Grid>

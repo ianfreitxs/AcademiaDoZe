@@ -138,20 +138,36 @@
                                             Margin="0,0,0,5"/>
 
                                         <Button
-                                            Grid.Row="0"
-                                            Grid.Column="1"
-                                            Text="Editar"
-                                            Style="{StaticResource ButtonSmall}"
-                                            Margin="4,0"
-                                            Clicked="OnEditButtonClicked"/>
+    Grid.Row="0"
+    Grid.Column="1"
+    Text="Editar"
+    Style="{StaticResource ButtonSmall}"
+    Margin="4,0"
+    Clicked="OnEditButtonClicked">
+
+                                            <Button.ImageSource>
+                                                <FontImageSource
+            FontFamily="MaterialIcons"
+            Glyph="&#xe3c9;"/>
+                                            </Button.ImageSource>
+
+                                        </Button>
 
                                         <Button
-                                            Grid.Row="0"
-                                            Grid.Column="2"
-                                            Text="Excluir"
-                                            Style="{StaticResource ButtonDanger}"
-                                            Margin="4,0"
-                                            Clicked="OnDeleteButtonClicked"/>
+    Grid.Row="0"
+    Grid.Column="2"
+    Text="Excluir"
+    Style="{StaticResource ButtonDanger}"
+    Margin="4,0"
+    Clicked="OnDeleteButtonClicked">
+
+                                            <Button.ImageSource>
+                                                <FontImageSource
+            FontFamily="MaterialIcons"
+            Glyph="&#xe872;"/>
+                                            </Button.ImageSource>
+
+                                        </Button>
 
                                     </Grid>
 
