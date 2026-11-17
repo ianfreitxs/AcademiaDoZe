@@ -61,6 +61,9 @@ public static class MauiProgram
             MatriculaViewModel>();
 
         builder.Services.AddTransient<
+            AcessoViewModel>();
+
+        builder.Services.AddTransient<
             DashboardListPage>();
 
         builder.Services.AddTransient<
@@ -89,6 +92,9 @@ public static class MauiProgram
         
         builder.Services.AddTransient<
             MatriculaPage>();
+
+        builder.Services.AddTransient<
+            AcessoPage>();
 
 #if DEBUG
         builder.Logging.AddDebug();

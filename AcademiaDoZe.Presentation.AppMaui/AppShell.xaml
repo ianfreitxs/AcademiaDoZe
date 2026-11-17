@@ -63,4 +63,9 @@
         <ShellContent ContentTemplate="{DataTemplate views:MatriculaListPage}" Route="matriculas" />
     </FlyoutItem>
 
+    <FlyoutItem Title="Entrada e Saída">
+        <ShellContent 
+            ContentTemplate="{DataTemplate views:AcessoPage}" Route="acessos" />
+    </FlyoutItem>
+
 </Shell>

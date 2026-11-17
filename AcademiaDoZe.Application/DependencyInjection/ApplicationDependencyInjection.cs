@@ -28,6 +28,14 @@ public static class ApplicationDependencyInjection
             IMatriculaService,
             MatriculaService>();
 
+        services.AddTransient<
+            IAcessoAlunoService,
+            AcessoAlunoService>();
+
+        services.AddTransient<
+            IAcessoColaboradorService,
+            AcessoColaboradorService>();
+
         services.AddTransient(provider =>
         {
             var config =
@@ -69,6 +77,28 @@ public static class ApplicationDependencyInjection
             return (Func<IMatriculaRepository>)(() =>
                 new MatriculaRepository(
                     config.ConnectionString,
+                    config.DatabaseType));
+        });
+
+        services.AddTransient(provider =>
+        {
+            var config = 
+                provider.GetRequiredService<RepositoryConfig>();
+
+            return (Func<IAcessoAlunoRepository>)(() => 
+                new AcessoAlunoRepository(
+                    config.ConnectionString, 
+                    config.DatabaseType));
+        });
+
+        services.AddTransient(provider =>
+        {
+            var config = 
+                provider.GetRequiredService<RepositoryConfig>();
+
+            return (Func<IAcessoColaboradorRepository>)(() => 
+                new AcessoColaboradorRepository(
+                    config.ConnectionString, 
                     config.DatabaseType));
         });
 

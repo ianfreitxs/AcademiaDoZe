@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:AcademiaDoZe.Presentation.AppMaui.ViewModels"
+             x:Class="AcademiaDoZe.Presentation.AppMaui.Views.AcessoPage"
+             x:DataType="vm:AcessoViewModel"
+             Title="{Binding Title}">
+    <ScrollView>
+        <VerticalStackLayout Padding="18" Spacing="18">
+            <Label Text="Controle de Entrada e Saída" Style="{StaticResource Headline}" HorizontalOptions="Center" />
+            <Label Text="Informe o CPF da pessoa. O sistema alterna automaticamente entre entrada e saída, usando o último registro salvo." Style="{StaticResource SubHeadline}" HorizontalTextAlignment="Center" />
+
+            <Border Style="{StaticResource CardBorder}" Padding="16">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="Aluno" Style="{StaticResource SubHeadline}" />
+                    <Label Text="Digite o CPF do aluno para registrar a entrada ou a saída." />
+                    <Entry Text="{Binding CpfAluno}"
+                           Placeholder="CPF do aluno"
+                           Keyboard="Numeric"
+                           MaxLength="14"
+                           ClearButtonVisibility="WhileEditing" />
+                    <Button Text="Registrar entrada / saída do aluno"
+                            Command="{Binding RegistrarAcessoAlunoCommand}"
+                            Style="{StaticResource ButtonPrimary}"
+                            HeightRequest="48" />
+                    <Label Text="{Binding MensagemAluno}"
+                           LineBreakMode="WordWrap"
+                           TextColor="{AppThemeBinding Light={StaticResource Gray700}, Dark={StaticResource Gray200}}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Style="{StaticResource CardBorder}" Padding="16">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="Colaborador" Style="{StaticResource SubHeadline}" />
+                    <Label Text="Digite o CPF do colaborador para registrar a entrada ou a saída." />
+                    <Entry Text="{Binding CpfColaborador}"
+                           Placeholder="CPF do colaborador"
+                           Keyboard="Numeric"
+                           MaxLength="14"
+                           ClearButtonVisibility="WhileEditing" />
+                    <Button Text="Registrar entrada / saída do colaborador"
+                            Command="{Binding RegistrarAcessoColaboradorCommand}"
+                            Style="{StaticResource ButtonPrimary}"
+                            HeightRequest="48" />
+                    <Label Text="{Binding MensagemColaborador}"
+                           LineBreakMode="WordWrap"
+                           TextColor="{AppThemeBinding Light={StaticResource Gray700}, Dark={StaticResource Gray200}}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <ActivityIndicator IsVisible="{Binding IsBusy}"
+                               IsRunning="{Binding IsBusy}"
+                               HorizontalOptions="Center" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
